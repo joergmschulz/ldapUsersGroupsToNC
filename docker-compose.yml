@@ -1,0 +1,41 @@
+services:
+  ldapxls:
+    image: joergmschulz/ldapusersgroups:latest
+    build: 
+      context: .
+    container_name: ldapxls
+    hostname: ldapxls
+    volumes:
+      # - ./output:/data/:rw
+      - ./log/ldapxls.log:/var/log/ldapxls.log
+    environment:
+      - DEBUG_DEVELOP=false
+      - LDAPXLS_GROUP_FILTER=${LDAPXLS_GROUP_FILTER}
+      - LDAPXLS_SEARCHBASE=${MM3SYNC_SEARCHBASE}
+      - LDAPXLS_SEARCH_FILTER=${LDAPXLS_SEARCH_FILTER}
+      - DOMAIN=${DOMAIN}
+      - LDAP_USER=${LDAP_ADMIN_DN}
+      - LDAP_PASSWORD=${LDAP_ADMIN_PASSWORD}
+      - LDAP_HOSTNAME=${LDAP_HOSTNAME}
+      - LDAPXLS_PREFERRED_LANGUAGE=${LDAPXLS_PREFERRED_LANGUAGE:-de}
+      - NC_USER=${NC_USER}
+      - NC_PASS=${NC_PASS}
+      - NC_URL=${NC_URL}
+      - OUTPUTFILE=BenutzerUndGruppen.xls
+      # - OUTPUTDIR=/data/
+      - NCDIR=${USERDOCDIR}
+      
+
+      
+    networks:
+      services:
+        ipv4_address: ${LDAPXLS_IP}
+
+
+
+
+
+
+networks:
+  services: 
+    external: true

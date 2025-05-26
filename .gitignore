@@ -1,0 +1,9 @@
+*.pyc
+*.swp
+*.vscode
+__pycache__/
+virtenv/*
+thd/*
+misc/*
+config.ini
+.env

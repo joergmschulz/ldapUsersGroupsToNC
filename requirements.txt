@@ -1,0 +1,4 @@
+pandas
+XlsxWriter
+ldap3
+nc_py_api
