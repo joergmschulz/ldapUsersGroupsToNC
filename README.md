@@ -1,0 +1,15 @@
+# Ldap Users and Groups TO NC
+This dockerized python script looks up ldap users and their groups. It creates an xls formatted documentation and places it into a nextcloud folder.
+
+The configuration is done via a .env file. This file needs the following parameters:
+```
+## ldapUsersGroupsToNC
+LDAP_HOSTNAME=dir.yourdomain.somewhere
+LDAP_USER=LDAPDNOfYourUser
+LDAP_PASSWORDofThatUser
+LDAPXLS_SEARCH_FILTER="(&(objectclass=inetOrgPerson)(memberof=cn=yourGroupContaingAllUsers,ou=groups,dc=yourDomain,dc=local))"
+NC_USER=loginnameOFYourNC
+NC_PASS=supersecretpasswordofthatuser
+NC_URL=https://cloud.yourdomain.somewhere
+USERDOCDIR=/directoryToPlaceTeFileInto/
+```
