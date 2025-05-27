@@ -1,5 +1,8 @@
 # Ldap Users and Groups TO NC
 This dockerized python script looks up ldap users and their groups. It creates an xls formatted documentation and places it into a nextcloud folder.
+
+Pull requests for code cleanup are highly appreciated.
+
 This is a fork of https://github.com/lanbugs/get_ad_right_matrix.git
 
 ## config
