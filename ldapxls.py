@@ -46,7 +46,7 @@ SEARCH_FILTER = os.environ['LDAPXLS_SEARCH_FILTER']
 #SEARCH_FILTER = '(&(objectclass=user)(sAMAccountName=*)(!(UserAccountControl:1.2.840.113556.1.4.803:=2))(memberOf=CN=b_testgruppe und restlicher DN))'
 # Output file
 FILE = os.environ['OUTPUTFILE']
-# OUTPUTDIR = os.environ['OUTPUTDIR']
+
 NCDIR = os.environ['NCDIR']
 ########################################################################################################################
 if os.environ['DEBUG_DEVELOP']=='true' :
@@ -133,8 +133,10 @@ def main():
 
         }
     )
-    # set header line text rotation to 90 degree
-    # header_format.set_rotation(270)
+    rotation = int(os.environ['LDAPXLS_ROTATION'])
+    if rotation>0 :
+        # set header line text rotation to 90 degree
+        header_format.set_rotation(rotation)
 
     # apply header format
     for col_num, value in enumerate(a.columns.values):
