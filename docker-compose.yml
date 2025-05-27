@@ -5,9 +5,7 @@ services:
       context: .
     container_name: ldapxls
     hostname: ldapxls
-    volumes:
-      # - ./output:/data/:rw
-      - ./log/ldapxls.log:/var/log/ldapxls.log
+    
     environment:
       - DEBUG_DEVELOP=false
       - LDAPXLS_GROUP_FILTER=${LDAPXLS_GROUP_FILTER}
@@ -22,7 +20,7 @@ services:
       - NC_PASS=${NC_PASS}
       - NC_URL=${NC_URL}
       - OUTPUTFILE=BenutzerUndGruppen.xls
-      # - OUTPUTDIR=/data/
+     
       - NCDIR=${USERDOCDIR}
       
 
