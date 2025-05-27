@@ -1,6 +1,6 @@
 # Ldap Users and Groups TO NC
 This dockerized python script looks up ldap users and their groups. It creates an xls formatted documentation and places it into a nextcloud folder.
-
+## config
 The configuration is done via a .env file. This file needs the following parameters:
 ```
 ## ldapUsersGroupsToNC
@@ -13,3 +13,5 @@ NC_PASS=supersecretpasswordofthatuser
 NC_URL=https://cloud.yourdomain.somewhere
 USERDOCDIR=/directoryToPlaceTeFileInto/
 ```
+## run
+use docker compose run --rm 
