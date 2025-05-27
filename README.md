@@ -10,8 +10,8 @@ The configuration is done via a .env file. This file needs the following paramet
 ```
 ## ldapUsersGroupsToNC
 LDAP_HOSTNAME=dir.yourdomain.somewhere
-LDAP_USER=LDAPDNOfYourUser
-LDAP_PASSWORDofThatUser
+LDAP_ADMIN_DN=LDAPDNOfYourUser
+LDAP_ADMIN_PASSWORD=ofThatUser
 LDAPXLS_SEARCH_FILTER="(&(objectclass=inetOrgPerson)(memberof=cn=yourGroupContaingAllUsers,ou=groups,dc=yourDomain,dc=local))"
 NC_USER=loginnameOFYourNC
 NC_PASS=supersecretpasswordofthatuser
