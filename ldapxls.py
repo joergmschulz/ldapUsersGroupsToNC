@@ -4,7 +4,7 @@
 # get_ad_right_matrix.py
 # Export AD User -> Group Matrix to Excel
 # Written by Maximilian Thoma 2021
-#
+# changes by Jörg M. Schulz 2025
 import os
 import json
 import re
