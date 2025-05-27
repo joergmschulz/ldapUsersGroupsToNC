@@ -14,4 +14,4 @@ NC_URL=https://cloud.yourdomain.somewhere
 USERDOCDIR=/directoryToPlaceTeFileInto/
 ```
 ## run
-use docker compose run --rm 
+use ```docker compose run --rm ldapxls python ldapxls.py``` as needed / or triggered by crontab
