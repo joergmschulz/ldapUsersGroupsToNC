@@ -108,6 +108,10 @@ def main():
             else:
                 matrix[group][index] = "-"
     
+    if os.environ['DEBUG_DEVELOP']=='true' :
+          pdb.set_trace()
+    matrix = dict(sorted(matrix.items()))
+    
 
     # generate data matrix with pandas
     a = pd.DataFrame(matrix)
@@ -174,8 +178,6 @@ def main():
     # fix the formatting
     worksheet.autofit()
     # writer.close()
-    if os.environ['DEBUG_DEVELOP']=='true' :
-          pdb.set_trace()
 
     writer.close()
     bio.seek(0)
