@@ -23,3 +23,22 @@ LDAPXLS_ROTATION=45
 ```
 ## run
 use ```docker compose run --rm ldapxls python ldapxls.py``` as needed / or triggered by crontab
+
+# copy files from one nc to the other
+copyNcFiles
+copies data from one NC to the other if 
+* a directory has a file named ${copyto.txt}  
+* fhe file is newer
+
+- source host: ${NC_URL}
+- source user: ${NC_USER}
+- source pass: ${NC_PASS}
+
+
+- target host: ${NC_TARGET_URL}
+- target user: ${NC_TARGET_USER}
+- target pass: ${NC_TARGET_PASS}
+## config
+edit .env file as described above.
+## run
+``` docker compose run --rm copyNcFiles python copyNcFiles.py```

@@ -1,0 +1,16 @@
+FROM python:alpine
+
+RUN apk update 
+
+RUN mkdir /usr/local/ldapnc
+WORKDIR /usr/local/ldapnc
+COPY ./requirements-nccopy.txt .
+
+RUN pip install --upgrade pip && \
+   pip install -r requirements-nccopy.txt && rm requirements-nccopy.txt && \
+   adduser -D ldapnc
+COPY ./copyNcFiles.py .
+
+USER ldapnc
+ENTRYPOINT "/usr/local/bin/python /usr/local/ldapnc/copyNcFiles.py"
+

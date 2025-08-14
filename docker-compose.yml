@@ -29,6 +29,30 @@ services:
       services:
         ipv4_address: ${LDAPXLS_IP}
 
+  copyNcFiles:
+    image: joergmschulz/copyncfiles:latest
+    build: 
+      context: .
+      dockerfile: Dockerfile.copyNcFiles
+    container_name: copyNcFiles
+    hostname: copyNcFiles
+    
+    environment:
+      - DEBUG_DEVELOP=true
+      # source
+      - C_USER=${C_USER}
+      - C_PASS=${C_PASS}
+      - C_URL=${C_URL}
+      # target
+      - NC_USER=${NC_USER}
+      - NC_PASS=${NC_PASS}
+      - NC_URL=${NC_URL}
+
+      
+    networks:
+      services:
+        ipv4_address: ${LDAPXLS_IP}
+
 
 
 
