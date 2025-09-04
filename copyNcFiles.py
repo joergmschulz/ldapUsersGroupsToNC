@@ -85,11 +85,11 @@ def handle_dir(c, nc, node, target = False):
 def copy_file(c, nc, inputfile, output_name):
   
   print(inputfile.user_path, '-->', output_name)
-  buf = BytesIO()
-  c.files.download2stream(inputfile, buf)
-  buf.seek(0)
-  newfile = nc.files.upload_stream(output_name, buf)
-  
+  # buf = BytesIO()
+  data = c.files.download(inputfile)
+  newfile = nc.files.upload(output_name, data)
+  if os.environ['DEBUG_DEVELOP']=='true' :
+    pdb.set_trace()
 
 
 
